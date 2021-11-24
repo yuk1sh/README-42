@@ -10,7 +10,7 @@
 - [x] 📝 Libft のVCに潜ってきて新たに得られた知見 ranlib <libft> なるコマンドがあって、これはどうやら .d みたいに動いてくれるらしい（-MMD オプションみたいにインデックスを作成してくれる） 
 
 ## テストコマンド
-nm libft.aのシンボル確認　.oもできる
+- [x] nm libft.aのシンボル確認 そもそも.aは.oを集めたものなのでオブジェクトファイルでもできる（printfなど禁止されている外部関数を使用していないか確認できる）
 
 ## テストケース
 - !strcmp （strcmp==0、つまり差なし）
@@ -19,6 +19,8 @@ nm libft.aのシンボル確認　.oもできる
 - 子プロセスとして実行することでSEGVしても動くようにする
 - int と long long は確実に違う（long int と intはアーキテクチャによって同じ可能性がある）のでlong longが望ましい -- yokawada さん
 	- ちなみにsigned long long でも long long int でもいける（謎知識）
+- unsigned charで代入する方(chやcなど)も合わせる理由って?
+	-> manで指定された通りに s (代入される方)はキャストされ、そこにcが入るため結局暗黙の型変換が起きる。暗黙の型変換を避けるために(unsigned char)cで代入する。
 
 ## テスター
 - [x] https://github.com/Tripouille/libftTester.git
