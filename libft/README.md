@@ -1,17 +1,18 @@
-# 提出ファイル
+# Libft
+## 提出ファイル
 - *.c
 - libft.h
 - Makefile
 
-# Makefile
+## Makefile
 - addprefixしているのはいずれresourceやsrcなどとしてファイルを分割管理するため。
 - [x] -MMDは依存関係のファイルリストを拡張子.dのファイルに保存してくれて、コンパイルを行ってくれるもの。
 - [x] 📝 Libft のVCに潜ってきて新たに得られた知見 ranlib <libft> なるコマンドがあって、これはどうやら .d みたいに動いてくれるらしい（-MMD オプションみたいにインデックスを作成してくれる） 
 
-# テストコマンド
+## テストコマンド
 nm libft.aのシンボル確認　.oもできる
 
-# テストケース
+## テストケース
 - !strcmp （strcmp==0、つまり差なし）
 - &を使う
 - errno未対応
@@ -19,13 +20,13 @@ nm libft.aのシンボル確認　.oもできる
 - int と long long は確実に違う（long int と intはアーキテクチャによって同じ可能性がある）のでlong longが望ましい -- yokawada さん
 	- ちなみにsigned long long でも long long int でもいける（謎知識）
 
-# テスター
+## テスター
 - [x] https://github.com/Tripouille/libftTester.git
 - [x] https://github.com/alelievr/libft-unit-test.git
 - [x] https://github.com/jtoty/Libftest.git
 - [x] https://github.com/uosushi/libftester.git 自作テスター
 
-# テスト
+## テスト
 ```
 git clone <自身のlibft.git> libft
 git clone https://github.com/alelievr/libft-unit-test.git
@@ -35,13 +36,13 @@ git clone https://github.com/Tripouille/libftTester.git
 git clone https://github.com/uosushi/libftester.git
 ```
 
-# リファクタ
+## リファクタ (自分用)
 - 1行のみのifはなるべく波括弧を消すように統一
 - 1ファイルのみでの呼び出しを予定していたらstaticをつける（外部呼び出し防止）
 - 自作関数を呼び出すとき、その先で使用禁止関数を使っていないか
 - 全ての自作関数はstatic含めft_をつける
 
-# コーディング規則（original）
+## コーディング規則 (自分用)
 - !value
 	- 特別な理由がない限り`value == NULL`はこう書く
 - chunk
@@ -50,8 +51,8 @@ git clone https://github.com/uosushi/libftester.git
 	-> 戻り値としてメモリを返す
 	-> コピー先にする
 
-# チェック項目（検査済みはx）
-## Part1 libc関数（MANあり、オリジナルの挙動に従う）
+## チェック項目（検査済みはx）
+### Part1 libc関数（MANあり、オリジナルの挙動に従う）
 - [x] is*
 	- [x] 文字をASCIIコード（int型）の変数cで受け取る
 	- [x] 文字cを判定する（真なら0以外、そうでなければ0を返す）
@@ -128,7 +129,7 @@ git clone https://github.com/uosushi/libftester.git
 	- [t2] 真偽値は0か1なので-1も1あつかいになってしまうが、
 	- [x] overflowしたときerrnoを`ERANGE`に設定
 
-## Part2 追加関数（MANなし、CRASH防ぐ必要あり）
+### Part2 追加関数（MANなし、CRASH防ぐ必要あり）
 - [x] substr
 	- [t1] カウント上限つきのstrnlenを作る（strlenはコストがかかりすぎるので）
 		- if (ft_strlen(s + start) < len) len = ft_strlen(s + start);
@@ -158,7 +159,7 @@ git clone https://github.com/uosushi/libftester.git
 	- [ ] unsigned int、もしくはlong long
 	- [x] putchar_fdを有効活用
 
-### Bonus　42独自関数（MANなし、CRASH防ぐ必要あり）
+#### Bonus　42独自関数（MANなし、CRASH防ぐ必要あり）
 - [x] lstnew
 - [x] lstadd_front
 	- [t1] lstだけじゃなくnewにもNULLチェック入れる
