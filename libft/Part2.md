@@ -1,7 +1,8 @@
 # substr
 開始位置と長さを指定したら部分文字列を返す
 mem++しちゃうとreturnのときずれてしまうのでiをつかう
- lenがint maxの場合も動作するようにする
+lenがint maxの場合も動作するようにする
+（lenは1字なのにINT_MAX以上のsをstrlen(s)してしまうとコストが大きいので、strnlenのような関数を作成してstrnlen(s, len)とした方がよい）
 
 # strjoin
 - bzero
