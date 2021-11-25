@@ -38,21 +38,6 @@ git clone https://github.com/Tripouille/libftTester.git
 git clone https://github.com/uosushi/libftester.git
 ```
 
-## リファクタ (自分用)
-- 1行のみのifはなるべく波括弧を消すように統一
-- 1ファイルのみでの呼び出しを予定していたらstaticをつける（外部呼び出し防止）
-- 自作関数を呼び出すとき、その先で使用禁止関数を使っていないか
-- 全ての自作関数はstatic含めft_をつける
-
-## コーディング規則 (自分用)
-- !value
-	- 特別な理由がない限り`value == NULL`はこう書く
-- chunk
-	-> 本体があり、それを分割されたもの。断片や破片。
-- dest
-	-> 戻り値としてメモリを返す
-	-> コピー先にする
-
 ## チェック項目（検査済みはx）
 ### Part1 libc関数（MANあり、オリジナルの挙動に従う）
 - [x] is*
