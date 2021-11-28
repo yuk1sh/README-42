@@ -23,7 +23,7 @@
 	- 良さげなテスターと自作テスター（他でカバーされていない`atoi`と`calloc`の特殊ケース用）とテストに利用できるコマンド
 	- 関数ごとの最終チェック用リスト（Guacamoleでの挙動確認済）
 	- `/Part1.md, /Part2.md, /Bonus.md` 関数ごとの詳細
-- [ ] ft_printf     まだ (レビュー待ち)
+- [ ] ft_printf     120% (bonus込み) 3 outstanding project (Retry検討中)
 - [ ] born2beroot   まだ
 - [ ] get_next_line まだ
 

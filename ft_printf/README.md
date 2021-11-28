@@ -5,6 +5,13 @@ va_end
 # Makefile
  $(NAME), all, clean, fclean and re.
 
+# テスター
+- [x] https://github.com/gavinfielder/pft.git
+	1. `make`
+	2. `./test`（必要であればoptionでテストケースを絞り込み）
+	3. 生成される`result.txt`を読むとFAILだったケースの詳細が確認できる
+- [x] https://github.com/Tripouille/printfTester.git
+
 # 設計
 - [x] 構造体でi番目の変換指定子を全て管理する
 - [x] 処理の順番を整理する
@@ -49,9 +56,13 @@ precision		: 精度／文字列の長さ上限／最小桁数（桁が足りな�
 
 ## t_parsed	parsed
 *buffer			: malloc(BUFSIZ)で確保された、出力を溜め込んでおくバッファ。
-done			: 出力（溜め込み中も含む）の長さ
-status			: 途中の不正終了ステータス取得？
+done			: 出力（溜め込み中も含む）の長さ（ssize_t）
 format			: t_format型のデータを初期化・格納・使用して使い回す変数
+
+* SSIZE_MAX : `9223372036854775807`
+* doneは最大でも`10737418235`(INT_MAX * 5)(実際ははるかに小さい)しかない。`ssize_t`の方が8桁大きい
+* そのため処理を破壊しない
+* ssize_tは-1も扱える。これでステータスの代わりにもなる。
 
 ## t_push	length_of
 padding			: 0や空白で埋める長さ
