@@ -77,3 +77,4 @@ sum				: prefix + body + precision + padding の合計
 # Fix:
 - [t1] relinkチェック用にlibft内の使わないファイルに差し込んだprintf("ABC")を間違えてpushしてしまった (invalid compile) → 消してpush（済）
 - [t1] %*s, -32, "ABC"などでINT_MAXを超えた扱いとなり終了する問題
+- [t2] make bonus ルールで`all`すること
