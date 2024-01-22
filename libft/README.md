@@ -26,7 +26,7 @@
 - [x] https://github.com/Tripouille/libftTester.git
 - [x] https://github.com/alelievr/libft-unit-test.git
 - [x] https://github.com/jtoty/Libftest.git
-- [x] https://github.com/uosushi/libftester.git 自作テスター
+- [x] https://github.com/yuk1sh/libftester.git 自作テスター
 
 ## テスト
 ```
@@ -35,7 +35,7 @@ git clone https://github.com/alelievr/libft-unit-test.git
 cd libft
 git clone https://github.com/jtoty/Libftest.git
 git clone https://github.com/Tripouille/libftTester.git
-git clone https://github.com/uosushi/libftester.git
+git clone https://github.com/yuk1sh/libftester.git
 ```
 
 ## チェック項目（検査済みはx）
